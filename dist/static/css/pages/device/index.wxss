@@ -1,0 +1,7 @@
+
+.device_button.data-v-3bc345b2 {
+  position: fixed;
+  width: 80%;
+  bottom: 5%;
+  left: 10%;
+}
