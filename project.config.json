@@ -12,7 +12,7 @@
 	"compileType": "miniprogram",
 	"appid": "wx14e3a64729089708",
 	"projectname": "%E7%A9%BA%E6%B0%94%E7%9B%91%E6%8E%A7",
-	"libVersion": "2.4.3",
+	"libVersion": "2.5.0",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -31,57 +31,8 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
-			"list": [
-				{
-					"id": 0,
-					"name": "device",
-					"pathName": "pages/device/index",
-					"query": "devEui=6666000000000003"
-				},
-				{
-					"id": -1,
-					"name": "list",
-					"pathName": "pages/list/index",
-					"query": ""
-				},
-				{
-					"id": 2,
-					"name": "detail",
-					"pathName": "pages/detail/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "my",
-					"pathName": "pages/my/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "UnitedData",
-					"pathName": "pages/UnitedData/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "UnitedData",
-					"pathName": "pages/UnitedData/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "products",
-					"pathName": "pages/products/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "device",
-					"pathName": "pages/device/index",
-					"query": "devEui=6666000000000003&rule_id=1"
-				}
-			]
+			"current": -1,
+			"list": []
 		}
 	}
 }
