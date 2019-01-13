@@ -1,5 +1,6 @@
 <template name="login$9fc8eb4e">
   <view class="_div data-v-14b0feef container">
+    <image class="_img data-v-14b0feef img" src="/static/img/back.png"></image>
     <view class="_div data-v-14b0feef bottom-button">
       <i-button open-type="getUserInfo" type="primary" bindgetuserinfo="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_i-button data-v-14b0feef">微信登录</i-button>
     </view>

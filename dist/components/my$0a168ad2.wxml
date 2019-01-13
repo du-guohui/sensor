@@ -8,6 +8,7 @@
     <view class="_div data-v-8a0d6408 list">
       <i-cell-group class="_i-cell-group data-v-8a0d6408">
         <i-cell title="设置" is-link class="_i-cell data-v-8a0d6408"></i-cell>
+        <i-cell title="我的网关" is-link url="/pages/GatewayList/index" class="_i-cell data-v-8a0d6408"></i-cell>
         <i-cell title="公司介绍" is-link url="/pages/UnitedData/index" class="_i-cell data-v-8a0d6408"></i-cell>
       </i-cell-group>
     </view>

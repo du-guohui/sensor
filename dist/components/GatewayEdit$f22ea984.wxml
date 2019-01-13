@@ -1,0 +1,10 @@
+<template name="GatewayEdit$f22ea984">
+  <view class="_div data-v-8d045158 container">
+    <van-field label="mac地址" id="mac" clearable value="{{form.mac}}" placeholder="请输入mac地址" bindchange="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_van-field data-v-8d045158"></van-field>
+    <van-field label="位置名称" id="name" clearable value="{{form.name}}" placeholder="请输入位置名称" bindchange="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_van-field data-v-8d045158"></van-field>
+    <view class="_div data-v-8d045158 bottom-button">
+      <i-button type="primary" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}" class="_i-button data-v-8d045158">保存</i-button>
+    </view>
+    <i-toast id="toast" class="_i-toast data-v-8d045158"></i-toast>
+  </view>
+</template>

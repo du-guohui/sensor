@@ -22,8 +22,8 @@
           </view>
           <view class="_div data-v-32db312e name" bindtap="handleProxy" data-eventid="{{'2-'+index}}" data-comkey="{{$k}}">{{item.name}}</view>
           <view class="_div data-v-32db312e txt">
-            <label class="_span data-v-32db312e txt-li">温度:{{item.temp}}</label>
-            <label class="_span data-v-32db312e txt-li">湿度:{{item.humidity}}</label>
+            <label class="_span data-v-32db312e txt-li" wx:if="{{item.temperature}}">温度:{{item.temperature | capitalize}}°C</label>
+            <label class="_span data-v-32db312e txt-li" wx:if="{{item.humidity}}">湿度:{{item.humidity}}%</label>
           </view>
         </view>
         <view slot="right" class="_view data-v-32db312e">

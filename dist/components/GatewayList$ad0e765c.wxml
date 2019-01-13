@@ -1,3 +1,18 @@
 <template name="GatewayList$ad0e765c">
-  <view class="_div data-v-47e41e30 container"></view>
+  <view class="_div data-v-47e41e30 container">
+    <i-cell-group class="_i-cell-group data-v-47e41e30">
+      <van-swipe-cell right-width="60" wx:key="index" key="{{index}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="item" class="_van-swipe-cell data-v-47e41e30">
+        <view class="_view data-v-47e41e30">
+          <i-cell title="{{item.name}}" class="_i-cell data-v-47e41e30"></i-cell>
+        </view>
+        <view slot="right" class="_view data-v-47e41e30">
+          <view class="_div data-v-47e41e30 del" bindtap="handleProxy" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}">删除</view>
+        </view>
+      </van-swipe-cell>
+    </i-cell-group>
+    <view class="_div data-v-47e41e30 bottom-button">
+      <i-button bindtap="handleProxy" type="primary" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_i-button data-v-47e41e30">添加网关</i-button>
+    </view>
+    <i-toast id="toast" class="_i-toast data-v-47e41e30"></i-toast>
+  </view>
 </template>

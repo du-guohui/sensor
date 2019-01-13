@@ -13,7 +13,7 @@
           </li>
           <li>
             <view class="title">当前状态：</view>
-            <view class="txt">温度:{{temperature}} 湿度:{{humidity}} 在线</view>
+            <view class="txt">温度:{{temperature | capitalize}}°C  湿度:{{humidity}}%  在线</view>
           </li>
         </ul>
       </view>
@@ -22,7 +22,7 @@
       </div>
     </view>
 
-    <view v-if="option.series[0].data.length > '0'">
+    <view>
       <i-button
         :type="query == 'temperature' ? 'primary':''"
         size="small"
@@ -153,7 +153,12 @@ export default {
     query() {
       this.initChart();
     }
-  }
+  },  filters: {
+    capitalize: function(value) {
+      let net = Number(value)
+      return net
+    }
+  },
 };
 </script>
 
@@ -204,5 +209,9 @@ export default {
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
+}
+.container{
+  background: #f8fbff;
+  height: 100%;
 }
 </style>

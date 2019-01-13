@@ -28,8 +28,8 @@
             @click="ToDetail(item.id,item.devEui,item.rule_id,item.temperature,item.humidity)"
           >{{item.name}}</div>
           <div class="txt">
-            <span class="txt-li">温度:{{item.temperature | capitalize}}</span>
-            <span class="txt-li">湿度:{{item.humidity}}</span>
+            <span class="txt-li" v-if="item.temperature">温度:{{item.temperature | capitalize}}°C</span>
+            <span class="txt-li" v-if="item.humidity">湿度:{{item.humidity}}%</span>
           </div>
         </view>
         <view slot="right">
@@ -113,9 +113,8 @@ export default {
   },
   filters: {
     capitalize: function(value) {
-      if (!value) return "";
-      value = value.toString();
-      return value.charAt(0).toUpperCase() + value.slice(1);
+      let net = Number(value)
+      return net
     }
   },
   onShow() {
