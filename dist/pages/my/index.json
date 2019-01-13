@@ -1,4 +1,8 @@
 {
   "navigationBarTitleText": "个人中心",
-  "usingComponents": {}
+  "disableScroll": true,
+  "usingComponents": {
+    "i-cell-group": "../../iview/cell-group/index",
+    "i-cell": "../../iview/cell/index"
+  }
 }

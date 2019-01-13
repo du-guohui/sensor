@@ -1,11 +1,17 @@
 
-.container {
+.theme-back {
+  background: #3a9cff;
+}
+page {
+  background: #eeeeee;
   height: 100%;
 }
-.footer-tabbar {
+image {
+  width: 100%;
+}
+.bottom-button {
   position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
+  bottom: 60rpx;
+  left: 10%;
+  right: 10%;
 }

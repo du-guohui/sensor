@@ -1,27 +1,50 @@
-global.webpackJsonp([8],{
+global.webpackJsonp([9],{
 
-/***/ 14:
+/***/ 44:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__App__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_mpvue_router_patch__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_core_js_promise__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_core_js_promise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_babel_runtime_core_js_promise__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__App__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_mpvue_router_patch__ = __webpack_require__(6);
 
 
 
 
 
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_mpvue_router_patch__["a" /* default */]);
 
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.config.productionTip = false;
-__WEBPACK_IMPORTED_MODULE_2__App__["a" /* default */].mpType = 'app';
+__WEBPACK_IMPORTED_MODULE_2_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_4_mpvue_router_patch__["a" /* default */]);
 
-var app = new __WEBPACK_IMPORTED_MODULE_1_vue___default.a(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default()({}, __WEBPACK_IMPORTED_MODULE_2__App__["a" /* default */]));
+__WEBPACK_IMPORTED_MODULE_2_vue___default.a.prototype.ajax = function (url, data, method) {
+  return new __WEBPACK_IMPORTED_MODULE_1_babel_runtime_core_js_promise___default.a(function (resolve, reject) {
+    wx.request({
+      url: 'https://nhjk.uniteddata.com/' + url,
+      data: data,
+      method: method ? 'POST' : 'Get',
+      header: {
+        'Authorization': wx.getStorageSync('Authorization'),
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      success: function success(res) {
+        resolve(res.data);
+      },
+      fail: function fail(err) {
+        reject(err);
+      }
+    });
+  });
+};
+
+__WEBPACK_IMPORTED_MODULE_2_vue___default.a.config.productionTip = false;
+__WEBPACK_IMPORTED_MODULE_3__App__["a" /* default */].mpType = 'app';
+
+var app = new __WEBPACK_IMPORTED_MODULE_2_vue___default.a(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default()({}, __WEBPACK_IMPORTED_MODULE_3__App__["a" /* default */]));
 
 app.$mount();
 
@@ -30,6 +53,7 @@ app.$mount();
     pages: [],
     window: {
       "backgroundTextStyle": "light",
+      "backgroundColor": "#eeeeee",
       "navigationBarBackgroundColor": "#3a9cff",
       "navigationBarTextStyle": "white",
       "enablePullDownRefresh": false
@@ -37,25 +61,22 @@ app.$mount();
     "tabBar": {
       "color": "#999999",
       "selectedColor": "#3a9cff",
-      "borderStyle": "black",
+      "borderStyle": "white",
       "list": [{
         "selectedIconPath": "static/img/home-c.png",
         "iconPath": "static/img/home.png",
         "pagePath": "pages/index/index",
         "text": "首页"
-
       }, {
         "selectedIconPath": "static/img/list-c.png",
         "iconPath": "static/img/list.png",
         "pagePath": "pages/list/index",
         "text": "设备"
-
       }, {
         "selectedIconPath": "static/img/product-c.png",
         "iconPath": "static/img/product.png",
         "pagePath": "pages/products/index",
         "text": "产品"
-
       }, {
         "selectedIconPath": "static/img/my-c.png",
         "iconPath": "static/img/my.png",
@@ -68,17 +89,17 @@ app.$mount();
 
 /***/ }),
 
-/***/ 44:
+/***/ 84:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_lib_selector_type_script_index_0_App_vue__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_lib_selector_type_script_index_0_App_vue__ = __webpack_require__(87);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(45)
+  __webpack_require__(85)
 }
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(5)
 /* script */
 
 /* template */
@@ -120,25 +141,47 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 45:
+/***/ 85:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 47:
+/***/ 87:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   mpType: "app",
-  methods: {},
-  created: function created() {}
+  methods: {
+    Login: function Login() {
+      // 用户登录获取
+      var _this = this;
+      wx.login({
+        success: function success(res) {
+          if (res.code) {
+            _this.ajax("user/login", { code: res.code }).then(function (res) {
+              wx.setStorage({
+                key: "Authorization",
+                data: res.content
+              });
+              // console.log(res.content);
+            });
+          } else {
+            console.log("登录失败！" + res.errMsg);
+          }
+        }
+      });
+    }
+  },
+  created: function created() {
+    this.Login();
+  }
 });
 
 /***/ })
 
-},[14]);
+},[44]);
 //# sourceMappingURL=app.js.map

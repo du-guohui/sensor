@@ -1,1 +1,1 @@
-<import src="/pages/UnitedData/index.vue.wxml" /><template is="79f6a873" data="{{ ...$root['0'], $root }}"/>
+<import src="../../components/UnitedData$79f6a873" /><template is="UnitedData$79f6a873" data="{{ ...$root['0'], $root }}"/>

@@ -1,0 +1,22 @@
+<template name="index$0744d174">
+  <view class="_div data-v-9390ebf0 container">
+    <view wx:if="{{!userInfo}}" class="_view data-v-9390ebf0">
+      <view class="_div data-v-9390ebf0 login">
+        <wux-button block type="positive" class="_wux-button data-v-9390ebf0 login__button" open-type="getUserInfo" bindgetuserinfo="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">登录</wux-button>
+        <image src="/static/img/back.png" class="_img data-v-9390ebf0"></image>
+      </view>
+      <wux-dialog id="wux-dialog" class="_wux-dialog data-v-9390ebf0"></wux-dialog>
+    </view>
+    <view wx:else class="_view data-v-9390ebf0">
+      <view class="_div data-v-9390ebf0 my__top">
+        <view class="_div data-v-9390ebf0 avatar">
+          <image src="{{avatarUrl}}" class="_img data-v-9390ebf0"></image>
+        </view>
+        <view class="_div data-v-9390ebf0 name">{{nickName}}</view>
+      </view>
+      <wux-cell-group class="_wux-cell-group data-v-9390ebf0">
+        <wux-cell title="企业介绍" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_wux-cell data-v-9390ebf0"></wux-cell>
+      </wux-cell-group>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,7 @@
+<template name="index$75a47d58">
+  <view class="_div data-v-7b2e018c container">
+    <view class="_view data-v-7b2e018c index-page">
+      <image src="/static/img/index.png" alt class="_image data-v-7b2e018c index-img"></image>
+    </view>
+  </view>
+</template>

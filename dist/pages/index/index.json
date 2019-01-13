@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "无间能耗监控",
-  "usingComponents": {}
+  "usingComponents": {
+    "i-toast": "../../iview/toast/index"
+  }
 }

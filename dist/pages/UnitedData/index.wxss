@@ -1,1 +1,1 @@
-/* pages/UnitedData/index.wxss */
+@import "../../static/css/pages/UnitedData/index.wxss";

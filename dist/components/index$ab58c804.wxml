@@ -1,0 +1,64 @@
+<template name="index$ab58c804">
+  <view class="_div data-v-4da41300 container">
+    <view class="_view data-v-4da41300">
+      <view class="_view data-v-4da41300 pro-title-view">
+        <image class="_img data-v-4da41300 pro-title-image" src="https://application.idcxtech.com/image/2019-1-11/upload_f45ccdd3c23087510d49965215d30716.png"></image>
+      </view>
+      <view class="_view data-v-4da41300 pro" style="padding:3vw">
+        <view class="_view data-v-4da41300 pro-title-textView">
+          <text class="_text data-v-4da41300 pro-title-textA">U-SMART IDC THINGS\n</text>
+          <text class="_text data-v-4da41300 pro-title-textB">无间智能 数据中心 传感器</text>
+        </view>
+        <view class="_view data-v-4da41300 pro-general-view">
+          <text decode="true" class="_text data-v-4da41300 pro-general-text">      安全、高效、节能、智慧数据中心，从无间智能开始。无间智能系列硬件产品，是由优世联合集团旗下工程院出品，专为智慧数据中心提供与物互联的智能前端感知。通过各种有线和无线的传感器将数据中心运行状态感知采集后，上传网关，高速传输至云端，并通过实时建模、大数据分析、AI深度学习以及可视化展示，让数据中心运营更安全、高效、简单与智能。</text>
+        </view>
+        <view class="_view data-v-4da41300 product-view" style="margin-top:12vw">
+          <view class="_view data-v-4da41300 pro-image-view">
+            <image class="_img data-v-4da41300 pro-image" src="https://application.idcxtech.com/image/2019-1-11/upload_bff891911cdfe8ce87f1a2004a378694.jpg"></image>
+          </view>
+        </view>
+        <view class="_view data-v-4da41300 product-view">
+          <view class="_view data-v-4da41300 pro-image-view">
+            <image class="_img data-v-4da41300 pro-image" src="https://application.idcxtech.com/image/2019-1-11/upload_749c3257c670c54d31e8ad790143ecc1.jpg"></image>
+          </view>
+        </view>
+        <view class="_view data-v-4da41300 product-view">
+          <view class="_view data-v-4da41300 pro-image-view">
+            <image class="_img data-v-4da41300 pro-image" src="https://application.idcxtech.com/image/2019-1-11/upload_7ee146e2d9842e1b648784873d6ae850.jpg" style="height:62.18vw"></image>
+          </view>
+        </view>
+        <view class="_view data-v-4da41300 product-view">
+          <view class="_view data-v-4da41300 pro-image-view">
+            <image class="_img data-v-4da41300 pro-image" src="https://application.idcxtech.com/image/2019-1-11/upload_a713b3e6ab6e97871e8ff6e5e460d957.jpg"></image>
+          </view>
+        </view>
+        <view class="_view data-v-4da41300 product-view">
+          <view class="_view data-v-4da41300 pro-image-view">
+            <image class="_img data-v-4da41300 pro-image" src="https://application.idcxtech.com/image/2019-1-11/upload_63e20ff4c9121516fb7625a080753f41.jpg"></image>
+          </view>
+        </view>
+        <view class="_view data-v-4da41300 product-view">
+          <view class="_view data-v-4da41300 pro-image-view">
+            <image class="_img data-v-4da41300 pro-image" src="https://application.idcxtech.com/image/2019-1-11/upload_7c903b5d0b8a74fba04ce45a69b65b91.jpg"></image>
+          </view>
+        </view>
+        <view class="_view data-v-4da41300 product-view">
+          <view class="_view data-v-4da41300 pro-image-view">
+            <image class="_img data-v-4da41300 pro-image" src="https://application.idcxtech.com/image/2019-1-11/upload_5f609762857cabef9ac533557f4f351b.jpg" style="height:73.52vw"></image>
+          </view>
+        </view>
+        <view class="_view data-v-4da41300 product-view">
+          <view class="_view data-v-4da41300 pro-image-view">
+            <image class="_img data-v-4da41300 pro-image" src="https://application.idcxtech.com/image/2019-1-11/upload_f6ab4c7e2caa4d8e530936d049a40db3.jpg"></image>
+          </view>
+        </view>
+        <view class="_view data-v-4da41300 product-view">
+          <view class="_view data-v-4da41300 pro-image-view">
+            <image class="_img data-v-4da41300 pro-image" src="https://application.idcxtech.com/image/2019-1-11/upload_1816abe845f68c78610a58dddb7e168c.jpg" style="height:59.78vw"></image>
+          </view>
+        </view>
+      </view>
+      <image class="_img data-v-4da41300 bottomImg" src="https://application.idcxtech.com/image/2019-1-11/upload_6c59226381d2c4d385ab107e1c0e578d.png"></image>
+    </view>
+  </view>
+</template>

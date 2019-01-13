@@ -1,0 +1,36 @@
+
+.my-top.data-v-8a0d6408 {
+  overflow: hidden;
+  padding: 40rpx 0 40rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 250rpx;
+  z-index: 10;
+}
+.avatar.data-v-8a0d6408 {
+  width: 160rpx;
+  height: 160rpx;
+  border: solid 8rpx #ffffff;
+  background-size: cover;
+  border-radius: 50%;
+  margin: 0 auto 20rpx;
+  background-color: #c9c9c9;
+}
+.name.data-v-8a0d6408 {
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #ffffff;
+}
+.list.data-v-8a0d6408 {
+  padding-top: 330rpx;
+}
+.login-button.data-v-8a0d6408 {
+  position: fixed;
+  bottom: 5%;
+  left: 10%;
+  right: 10%;
+}

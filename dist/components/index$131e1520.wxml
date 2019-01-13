@@ -1,0 +1,10 @@
+<template name="index$131e1520">
+  <view class="_div data-v-3bc345b2 container">
+    <wux-cell-group class="_wux-cell-group data-v-3bc345b2">
+      <wux-cell hover-class="none" class="_wux-cell data-v-3bc345b2">
+        <wux-input label="位置名称" id="name" value="{{form.name}}" placeholder="请输入位置名称" controlled bindchange="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_wux-input data-v-3bc345b2"></wux-input>
+      </wux-cell>
+    </wux-cell-group>
+    <wux-button block type="positive" class="_wux-button data-v-3bc345b2 device_button" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">保存</wux-button>
+  </view>
+</template>

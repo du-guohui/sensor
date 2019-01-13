@@ -1,0 +1,40 @@
+<template name="index$430120b8">
+  <view class="_div data-v-577a9a3a container">
+    <view class="_div data-v-577a9a3a list__top">
+      <wux-row class="_wux-row data-v-577a9a3a">
+        <wux-col span="10" class="_wux-col data-v-577a9a3a">
+          <view class="_view data-v-577a9a3a placeholder">
+            <wux-search-bar clear maxlength="8" class="_wux-search-bar data-v-577a9a3a"></wux-search-bar>
+          </view>
+        </wux-col>
+        <wux-col span="2" class="_wux-col data-v-577a9a3a">
+          <view class="_view data-v-577a9a3a tianjia" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+            <wux-icon type="ios-add" color="#ffffff" size="20" class="_wux-icon data-v-577a9a3a"></wux-icon>
+          </view>
+        </wux-col>
+      </wux-row>
+    </view>
+    <view class="_view data-v-577a9a3a page__list" wx:if="{{list}}">
+      <van-swipe-cell right-width="120" wx:key="index" key="{{index}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="item" class="_van-swipe-cell data-v-577a9a3a">
+        <view class="_view data-v-577a9a3a li" bindtap="handleProxy" data-eventid="{{'1-'+index}}" data-comkey="{{$k}}">
+          <view class="_div data-v-577a9a3a img">
+            <image src="/static/img/wd.jpg" class="_img data-v-577a9a3a"></image>
+          </view>
+          <view class="_div data-v-577a9a3a name">{{item.name}}</view>
+          <view class="_div data-v-577a9a3a txt">
+            <label class="_span data-v-577a9a3a txt-li">温度:{{item.temp}}</label>
+            <label class="_span data-v-577a9a3a txt-li">湿度:{{item.humidity}}</label>
+          </view>
+        </view>
+        <view slot="right" class="_view data-v-577a9a3a">
+          <view class="_div data-v-577a9a3a right-box">
+            <view class="_div data-v-577a9a3a edit" bindtap="handleProxy" data-eventid="{{'2-'+index}}" data-comkey="{{$k}}">修改</view>
+            <view class="_div data-v-577a9a3a del" bindtap="handleProxy" data-eventid="{{'3-'+index}}" data-comkey="{{$k}}">删除</view>
+          </view>
+        </view>
+      </van-swipe-cell>
+    </view>
+    <wux-dialog id="wux-dialog" class="_wux-dialog data-v-577a9a3a"></wux-dialog>
+    <wux-toast id="wux-toast" class="_wux-toast data-v-577a9a3a"></wux-toast>
+  </view>
+</template>

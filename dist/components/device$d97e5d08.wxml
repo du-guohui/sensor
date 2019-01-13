@@ -1,0 +1,10 @@
+<template name="device$d97e5d08">
+  <view class="_div data-v-7d4c20b4 container">
+    <van-field label="位置名称" id="name" focus clearable value="{{form.name}}" placeholder="请输入位置名称" bindchange="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_van-field data-v-7d4c20b4"></van-field>
+    <view class="_div data-v-7d4c20b4 bottom-button">
+      <i-button type="primary" bindtap="handleProxy" wx:if="{{edit}}" data-eventid="{{'2'}}" data-comkey="{{$k}}" class="_i-button data-v-7d4c20b4">保存</i-button>
+      <i-button type="primary" bindtap="handleProxy" wx:else data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_i-button data-v-7d4c20b4">保存</i-button>
+    </view>
+    <i-toast id="toast" class="_i-toast data-v-7d4c20b4"></i-toast>
+  </view>
+</template>

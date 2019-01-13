@@ -1,0 +1,1 @@
+<import src="../../components/GatewayList$ad0e765c" /><template is="GatewayList$ad0e765c" data="{{ ...$root['0'], $root }}"/>

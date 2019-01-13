@@ -1,0 +1,9 @@
+<template name="index$640311aa">
+  <view class="_div data-v-f802913a container">
+    <view class="_div data-v-f802913a login" wx:if="{{!userInfo}}">
+      <wux-button block type="positive" class="_wux-button data-v-f802913a login__button" open-type="getUserInfo" bindgetuserinfo="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">登录</wux-button>
+      <image src="/static/img/back.png" class="_img data-v-f802913a"></image>
+    </view>
+    <wux-dialog id="wux-dialog" class="_wux-dialog data-v-f802913a"></wux-dialog>
+  </view>
+</template>

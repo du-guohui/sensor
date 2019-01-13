@@ -1,1 +1,1 @@
-/* pages/products/index.wxss */
+@import "../../static/css/pages/products/index.wxss";
