@@ -7,7 +7,8 @@ Vue.use(MpvueRouterPatch);
 Vue.prototype.ajax = function (url, data, method) {
   return new Promise((resolve, reject) => {
     wx.request({
-      url: `https://nhjk.uniteddata.com/${url}`,
+      // url: `https://nhjk.uniteddata.com/${url}`,
+      url: `http://172.16.1.117:5000/${url}`,
       data: data,
       method: method ? 'POST' : 'Get',
       header: {

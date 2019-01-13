@@ -1,17 +1,17 @@
-global.webpackJsonp([7],{
+global.webpackJsonp([1],{
 
 /***/ 100:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_lib_template_compiler_index_id_data_v_6c1e283e_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_lib_template_compiler_index_id_data_v_6c1e283e_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(109);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(101)
 }
-var normalizeComponent = __webpack_require__(5)
+var normalizeComponent = __webpack_require__(2)
 /* script */
 
 /* template */
@@ -29,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "src/pages/detail/index.vue"
+Component.options.__file = "src\\pages\\detail\\index.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] index.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -65,9 +65,10 @@ if (false) {(function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_echarts_dist_echarts_min__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_echarts_dist_echarts_min__ = __webpack_require__(161);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_echarts_dist_echarts_min___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_echarts_dist_echarts_min__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_mpvue_echarts__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_mpvue_echarts__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_index__ = __webpack_require__(158);
 //
 //
 //
@@ -98,156 +99,146 @@ if (false) {(function () {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
 var chart = null;
-
-function initChart(canvas, width, height) {
-  chart = __WEBPACK_IMPORTED_MODULE_0_echarts_dist_echarts_min___default.a.init(canvas, null, {
-    width: width,
-    height: height
-  });
-
-  canvas.setChart(chart);
-  var option = {
-    tooltip: {
-      trigger: "axis",
-      axisPointer: {
-        type: "cross",
-        label: {
-          backgroundColor: "#6a7985"
-        }
-      }
-    },
-    legend: {
-      data: ["温度", "湿度"]
-    },
-    grid: {
-      left: "3%",
-      right: "4%",
-      bottom: "3%",
-      containLabel: true
-    },
-    xAxis: [{
-      type: "category",
-      boundaryGap: false,
-      data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
-    }],
-    yAxis: [{
-      type: "value"
-    }],
-    series: [{
-      name: "温度",
-      type: "line",
-      areaStyle: {},
-      data: [28, 27, 28, 26, 24, 24, 29]
-    }, {
-      name: "湿度",
-      type: "line",
-      areaStyle: {},
-      data: [60, 61, 61, 65, 66, 67, 66]
-    }]
-  };
-
-  chart.setOption(option);
-
-  return chart; // 返回 chart 后可以自动绑定触摸操作
-}
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   components: {
     mpvueEcharts: __WEBPACK_IMPORTED_MODULE_1_mpvue_echarts__["a" /* default */]
   },
   data: function data() {
-    return { echarts: __WEBPACK_IMPORTED_MODULE_0_echarts_dist_echarts_min___default.a, onInit: initChart, detail: "" };
+    return {
+      echarts: __WEBPACK_IMPORTED_MODULE_0_echarts_dist_echarts_min__,
+      option: null,
+      query: "temperature",
+      detail: "",
+      temperature: "",
+      humidity: ""
+    };
   },
 
   methods: {
     GetData: function GetData() {
       var _this = this;
 
-      this.detail = '';
+      this.temperature = this.$route.query.temperature;
+      this.humidity = this.$route.query.humidity;
+      this.detail = "";
+      this.query = 'temperature';
       this.ajax("device/getDevice", { id: this.$route.query.id }).then(function (res) {
         _this.detail = res.content;
+        _this.initChart();
       });
+    },
+    initChart: function initChart() {
+      var _this2 = this;
+
+      this.option = {
+        tooltip: {
+          trigger: "axis",
+          axisPointer: {
+            type: "cross",
+            label: {
+              backgroundColor: "#6a7985"
+            }
+          }
+        },
+        grid: {
+          left: "3%",
+          right: "4%",
+          bottom: "3%",
+          containLabel: true
+        },
+        dataZoom: [{
+          type: "slider", //图表下方的伸缩条
+          show: true, //是否显示
+          realtime: true, //拖动时，是否实时更新系列的视图
+          start: 0, //伸缩条开始位置（1-100），可以随时更改
+          end: 100 //伸缩条结束位置（1-100），可以随时更改
+        }],
+        xAxis: [{
+          type: "category",
+          boundaryGap: false,
+          data: []
+        }],
+        yAxis: [{
+          type: "value"
+        }],
+        series: [{
+          name: "",
+          type: "line",
+          data: []
+        }]
+      };
+      this.ajax("device/getDeviceHistoryData?", {
+        devEui: this.$route.query.devEui,
+        start: Number(new Date().getTime() - 30 * 60 * 1000),
+        end: Number(new Date().getTime()),
+        query: this.query
+      }).then(function (res) {
+        var da = res.content.data[0];
+        _this2.option.series.name = da.tags.prop;
+        _this2.option.series.type = "line";
+        for (var d in da.dps) {
+          _this2.option.xAxis[0].data.push(Object(__WEBPACK_IMPORTED_MODULE_2__utils_index__["a" /* formatDate */])(new Date(Number(d))));
+          _this2.option.series[0].data.push(da.dps[d].toFixed(2));
+        }
+        _this2.$refs.echarts.init();
+      });
+    },
+    handleInit: function handleInit(canvas, width, height) {
+      chart = __WEBPACK_IMPORTED_MODULE_0_echarts_dist_echarts_min__["init"](canvas, null, {
+        width: width,
+        height: height
+      });
+      canvas.setChart(chart);
+      chart.setOption(this.option);
+      return chart;
     }
   },
   onShow: function onShow() {
     this.GetData();
+  },
+
+  watch: {
+    query: function query() {
+      this.initChart();
+    }
   }
 });
 
 /***/ }),
 
-/***/ 103:
+/***/ 104:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "container"
-  }, [_c('view', {
-    staticClass: "detail__box"
-  }, [_c('view', {
-    staticClass: "detail__bo__left"
-  }, [_c('ul', [_c('li', [_c('view', {
-    staticClass: "title"
-  }, [_vm._v("位置名称：")]), _vm._v(" "), _c('view', {
-    staticClass: "txt"
-  }, [_vm._v(_vm._s(_vm.detail.name))])]), _vm._v(" "), _c('li', [_c('view', {
-    staticClass: "title"
-  }, [_vm._v("设备 EUI：")]), _vm._v(" "), _c('view', {
-    staticClass: "txt"
-  }, [_vm._v(_vm._s(_vm.detail.devEui))])]), _vm._v(" "), _c('li', [_c('view', {
-    staticClass: "title"
-  }, [_vm._v("当前状态：")]), _vm._v(" "), _c('view', {
-    staticClass: "txt"
-  }, [_vm._v("温度:25°C  湿度:65%  在线")])])], 1)], 1), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c('div', {
-    staticClass: "echarts-wrap"
-  }, [_c('mpvue-echarts', {
-    attrs: {
-      "echarts": _vm.echarts,
-      "onInit": _vm.onInit,
-      "canvasId": "demo-canvas",
-      "mpcomid": '0'
-    }
-  })], 1)])
-}
-var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "detail__bo__right"
-  }, [_c('img', {
-    attrs: {
-      "src": "/static/img/wd.jpg",
-      "alt": ""
-    }
-  })])
-}]
-render._withStripped = true
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-6c1e283e", esExports)
-  }
-}
-
-/***/ }),
-
-/***/ 140:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_mpvue_loader_lib_selector_type_script_index_0_echarts_vue__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mpvue_loader_lib_template_compiler_index_id_data_v_8046877c_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_mpvue_loader_lib_selector_type_template_index_0_echarts_vue__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_mpvue_loader_lib_selector_type_script_index_0_echarts_vue__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mpvue_loader_lib_template_compiler_index_id_data_v_8046877c_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_mpvue_loader_lib_selector_type_template_index_0_echarts_vue__ = __webpack_require__(108);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(141)
+  __webpack_require__(105)
 }
-var normalizeComponent = __webpack_require__(5)
+var normalizeComponent = __webpack_require__(2)
 /* script */
 
 /* template */
@@ -265,7 +256,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "node_modules/mpvue-echarts/src/echarts.vue"
+Component.options.__file = "node_modules\\mpvue-echarts\\src\\echarts.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] echarts.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -290,20 +281,20 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 141:
+/***/ 105:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 142:
+/***/ 106:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__wx_canvas__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__wx_canvas__ = __webpack_require__(107);
 
 //
 //
@@ -464,7 +455,7 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 144:
+/***/ 108:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -495,7 +486,131 @@ if (false) {
   }
 }
 
+/***/ }),
+
+/***/ 109:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "container"
+  }, [_c('view', {
+    staticClass: "detail__box"
+  }, [_c('view', {
+    staticClass: "detail__bo__left"
+  }, [_c('ul', [_c('li', [_c('view', {
+    staticClass: "title"
+  }, [_vm._v("位置名称：")]), _vm._v(" "), _c('view', {
+    staticClass: "txt"
+  }, [_vm._v(_vm._s(_vm.detail.name))])]), _vm._v(" "), _c('li', [_c('view', {
+    staticClass: "title"
+  }, [_vm._v("设备 EUI：")]), _vm._v(" "), _c('view', {
+    staticClass: "txt"
+  }, [_vm._v(_vm._s(_vm.detail.devEui))])]), _vm._v(" "), _c('li', [_c('view', {
+    staticClass: "title"
+  }, [_vm._v("当前状态：")]), _vm._v(" "), _c('view', {
+    staticClass: "txt"
+  }, [_vm._v("温度:" + _vm._s(_vm.temperature) + " 湿度:" + _vm._s(_vm.humidity) + " 在线")])])], 1)], 1), _vm._v(" "), _vm._m(0)]), _vm._v(" "), (_vm.option.series[0].data.length > '0') ? _c('view', [_c('i-button', {
+    attrs: {
+      "type": _vm.query == 'temperature' ? 'primary' : '',
+      "size": "small",
+      "inline": "",
+      "eventid": '0',
+      "mpcomid": '0'
+    },
+    on: {
+      "click": function($event) {
+        _vm.query = 'temperature'
+      }
+    }
+  }, [_vm._v("温度")]), _vm._v(" "), _c('i-button', {
+    attrs: {
+      "type": _vm.query == 'humidity' ? 'primary' : '',
+      "size": "small",
+      "inline": "",
+      "eventid": '1',
+      "mpcomid": '1'
+    },
+    on: {
+      "click": function($event) {
+        _vm.query = 'humidity'
+      }
+    }
+  }, [_vm._v("湿度")])], 1) : _vm._e(), _vm._v(" "), _c('div', {
+    staticClass: "echarts-wrap"
+  }, [_c('mpvue-echarts', {
+    ref: "echarts",
+    attrs: {
+      "lazyLoad": "",
+      "echarts": _vm.echarts,
+      "onInit": _vm.handleInit,
+      "mpcomid": '2'
+    }
+  })], 1)])
+}
+var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "detail__bo__right"
+  }, [_c('img', {
+    attrs: {
+      "src": "/static/img/wd.jpg",
+      "alt": ""
+    }
+  })])
+}]
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-6c1e283e", esExports)
+  }
+}
+
+/***/ }),
+
+/***/ 158:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export formatTime */
+/* harmony export (immutable) */ __webpack_exports__["a"] = formatDate;
+function formatNumber(n) {
+  var str = n.toString();
+  return str[1] ? str : '0' + str;
+}
+
+function formatTime(date) {
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1;
+  var day = date.getDate();
+  var hour = date.getHours();
+  var minute = date.getMinutes();
+  var second = date.getSeconds();
+  var t1 = [year, month, day].map(formatNumber).join('/');
+  var t2 = [hour, minute, second].map(formatNumber).join(':');
+  return t1 + ' ' + t2;
+}
+
+function formatDate(now) {
+  var year = now.getFullYear(),
+      month = now.getMonth() + 1,
+      date = now.getDate(),
+      hour = now.getHours(),
+      minute = now.getMinutes(),
+      second = now.getSeconds();
+  return month + "-" + date + " " + hour + ":" + minute;
+}
+
+/* unused harmony default export */ var _unused_webpack_default_export = ({
+  formatNumber: formatNumber,
+  formatTime: formatTime,
+  formatDate: formatDate
+});
+
 /***/ })
 
-},[125]);
+},[139]);
 //# sourceMappingURL=index.js.map

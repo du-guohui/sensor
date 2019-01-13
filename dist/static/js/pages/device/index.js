@@ -1,4 +1,4 @@
-global.webpackJsonp([6],{
+global.webpackJsonp([7],{
 
 /***/ 96:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -11,7 +11,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(97)
 }
-var normalizeComponent = __webpack_require__(5)
+var normalizeComponent = __webpack_require__(2)
 /* script */
 
 /* template */
@@ -29,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "src/pages/device/index.vue"
+Component.options.__file = "src\\pages\\device\\index.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] index.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -87,7 +87,7 @@ if (false) {(function () {
 //
 //
 
-var _require = __webpack_require__(43),
+var _require = __webpack_require__(19),
     $Toast = _require.$Toast;
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -99,7 +99,6 @@ var _require = __webpack_require__(43),
         img_url: "",
         appKey: "",
         mac: "",
-        rule_id: 7,
         id: ""
       },
       edit: false
@@ -256,5 +255,5 @@ if (false) {
 
 /***/ })
 
-},[124]);
+},[138]);
 //# sourceMappingURL=index.js.map

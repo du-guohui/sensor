@@ -8,7 +8,8 @@
     "pages/products/index",
     "pages/UnitedData/index",
     "pages/login/index",
-    "pages/GatewayList/index"
+    "pages/GatewayList/index",
+    "pages/GatewayEdit/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

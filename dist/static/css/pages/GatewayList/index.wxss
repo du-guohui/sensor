@@ -1,0 +1,9 @@
+
+.del.data-v-47e41e30 {
+  width: 120rpx;
+  background: red;
+  color: #ffffff;
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 100rpx;
+}

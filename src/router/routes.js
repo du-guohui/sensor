@@ -41,6 +41,7 @@ module.exports = [{
   config: {
     navigationBarTitleText: '详情',
     usingComponents: {
+      "i-button": "../../iview/button/index"
     }
   }
 }, {
@@ -84,7 +85,20 @@ module.exports = [{
     usingComponents: {
       "i-button": "../../iview/button/index",
       "i-cell-group": "../../iview/cell-group/index",
-      "i-cell": "../../iview/cell/index"
+      "i-cell": "../../iview/cell/index",
+      "i-toast": "../../iview/toast/index",
+      "van-swipe-cell": "../../vant/swipe-cell/index"
+    }
+  }
+}, {
+  path: 'pages/GatewayEdit/index',
+  name: 'GatewayEdit',
+  config: {
+    navigationBarTitleText: '添加网关',
+    usingComponents: {
+      "i-button": "../../iview/button/index",
+      "i-toast": "../../iview/toast/index",
+      "van-field": "../../vant/field/index"
     }
   }
 }]

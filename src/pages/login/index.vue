@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <img class="img" src="/static/img/back.png">
     <div class="bottom-button">
       <i-button open-type="getUserInfo" type="primary" @getuserinfo="userinfo">微信登录</i-button>
     </div>
@@ -27,4 +28,11 @@ export default {
 </script>
 
 <style scoped>
+.container{
+  background: #f8fbff;
+  height: 100%;
+}
+.img{
+  height: 500px;
+}
 </style>

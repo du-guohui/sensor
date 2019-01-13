@@ -30,7 +30,6 @@ export default {
         img_url: "",
         appKey: "",
         mac: "",
-        rule_id: 7,
         id: ""
       },
       edit: false

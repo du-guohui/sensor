@@ -12,6 +12,7 @@
     <div class="list">
       <i-cell-group>
         <i-cell title="设置" is-link></i-cell>
+        <i-cell title="我的网关" is-link url="/pages/GatewayList/index"></i-cell>
         <i-cell title="公司介绍" is-link url="/pages/UnitedData/index"></i-cell>
       </i-cell-group>
     </div>

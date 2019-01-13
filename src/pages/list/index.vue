@@ -17,12 +17,18 @@
     <view class="page__list">
       <van-swipe-cell right-width="160" v-for="(item,index) in list" :key="index">
         <view class="li">
-          <div class="img" @click="ToDetail(item.id)">
+          <div
+            class="img"
+            @click="ToDetail(item.id,item.devEui,item.rule_id,item.temperature,item.humidity)"
+          >
             <img src="/static/img/wd.jpg">
           </div>
-          <div class="name" @click="ToDetail(item.id)">{{item.name}}</div>
+          <div
+            class="name"
+            @click="ToDetail(item.id,item.devEui,item.rule_id,item.temperature,item.humidity)"
+          >{{item.name}}</div>
           <div class="txt">
-            <span class="txt-li">温度:{{item.temp}}</span>
+            <span class="txt-li">温度:{{item.temperature | capitalize}}</span>
             <span class="txt-li">湿度:{{item.humidity}}</span>
           </div>
         </view>
@@ -51,12 +57,14 @@ export default {
   methods: {
     GetData() {
       this.ajax("device/getDeviceList").then(res => {
-        this.list = res.content;
+        if (res.content.length > "0") {
+          this.list = res.content;
+        }
       });
     },
-    ToDetail(id) {
+    ToDetail(id, devEui, rule_id, temperature, humidity) {
       wx.navigateTo({
-        url: `/pages/detail/index?id=${id}`
+        url: `/pages/detail/index?id=${id}&devEui=${devEui}&rule_id=${rule_id}&temperature=${temperature}&humidity=${humidity}`
       });
     },
     ToDevice(appKey, devEui, id, name) {
@@ -84,13 +92,13 @@ export default {
             //     url: `/pages/device/index?mac=${str[1]}`
             //   });
             // } else {
-              let str = res.result.split("	");
-              if (str.length == 1) {
-                let str2 = res.result.split("\n");
-                _this.ToDevice(str2[0], str2[1]);
-              } else {
-                _this.ToDevice(str[0], str[1]);
-              }
+            let str = res.result.split("	");
+            if (str.length == 1) {
+              let str2 = res.result.split("\n");
+              _this.ToDevice(str2[0], str2[1]);
+            } else {
+              _this.ToDevice(str[0], str[1]);
+            }
             // }
           }
         },
@@ -101,6 +109,13 @@ export default {
           });
         }
       });
+    }
+  },
+  filters: {
+    capitalize: function(value) {
+      if (!value) return "";
+      value = value.toString();
+      return value.charAt(0).toUpperCase() + value.slice(1);
     }
   },
   onShow() {
