@@ -126,6 +126,13 @@ export default {
         end: Number(new Date().getTime()),
         query: this.query
       }).then(res => {
+        console.log({
+        devEui: this.$route.query.devEui,
+        start: Number(new Date().getTime() - 30 * 60 * 1000),
+        end: Number(new Date().getTime()),
+        query: this.query
+      });
+        
         let da = res.content.data[0];
         this.option.series.name = da.tags.prop;
         this.option.series.type = "line";

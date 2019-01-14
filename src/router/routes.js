@@ -101,4 +101,4 @@ module.exports = [{
       "van-field": "../../vant/field/index"
     }
   }
-}]
+  }]

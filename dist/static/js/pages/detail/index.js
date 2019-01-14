@@ -1,17 +1,17 @@
-global.webpackJsonp([7],{
+global.webpackJsonp([1],{
 
 /***/ 100:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_lib_template_compiler_index_id_data_v_6c1e283e_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_lib_template_compiler_index_id_data_v_6c1e283e_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(110);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(101)
 }
-var normalizeComponent = __webpack_require__(5)
+var normalizeComponent = __webpack_require__(2)
 /* script */
 
 /* template */
@@ -29,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "src/pages/detail/index.vue"
+Component.options.__file = "src\\pages\\detail\\index.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] index.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -65,10 +65,10 @@ if (false) {(function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_echarts_dist_echarts_min__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_echarts_dist_echarts_min__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_echarts_dist_echarts_min___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_echarts_dist_echarts_min__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_mpvue_echarts__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_index__ = __webpack_require__(152);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_mpvue_echarts__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_index__ = __webpack_require__(109);
 //
 //
 //
@@ -194,6 +194,13 @@ var chart = null;
         end: Number(new Date().getTime()),
         query: this.query
       }).then(function (res) {
+        console.log({
+          devEui: _this2.$route.query.devEui,
+          start: Number(new Date().getTime() - 30 * 60 * 1000),
+          end: Number(new Date().getTime()),
+          query: _this2.query
+        });
+
         var da = res.content.data[0];
         _this2.option.series.name = da.tags.prop;
         _this2.option.series.type = "line";
@@ -232,101 +239,18 @@ var chart = null;
 
 /***/ }),
 
-/***/ 103:
+/***/ 104:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "container"
-  }, [_c('view', {
-    staticClass: "detail__box"
-  }, [_c('view', {
-    staticClass: "detail__bo__left"
-  }, [_c('ul', [_c('li', [_c('view', {
-    staticClass: "title"
-  }, [_vm._v("位置名称：")]), _vm._v(" "), _c('view', {
-    staticClass: "txt"
-  }, [_vm._v(_vm._s(_vm.detail.name))])]), _vm._v(" "), _c('li', [_c('view', {
-    staticClass: "title"
-  }, [_vm._v("设备 EUI：")]), _vm._v(" "), _c('view', {
-    staticClass: "txt"
-  }, [_vm._v(_vm._s(_vm.detail.devEui))])]), _vm._v(" "), _c('li', [_c('view', {
-    staticClass: "title"
-  }, [_vm._v("当前状态：")]), _vm._v(" "), _c('view', {
-    staticClass: "txt"
-  }, [_vm._v("温度:" + _vm._s(_vm._f("capitalize")(_vm.temperature)) + "°C  湿度:" + _vm._s(_vm.humidity) + "%  在线")])])], 1)], 1), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c('view', [_c('i-button', {
-    attrs: {
-      "type": _vm.query == 'temperature' ? 'primary' : '',
-      "size": "small",
-      "inline": "",
-      "eventid": '0',
-      "mpcomid": '0'
-    },
-    on: {
-      "click": function($event) {
-        _vm.query = 'temperature'
-      }
-    }
-  }, [_vm._v("温度")]), _vm._v(" "), _c('i-button', {
-    attrs: {
-      "type": _vm.query == 'humidity' ? 'primary' : '',
-      "size": "small",
-      "inline": "",
-      "eventid": '1',
-      "mpcomid": '1'
-    },
-    on: {
-      "click": function($event) {
-        _vm.query = 'humidity'
-      }
-    }
-  }, [_vm._v("湿度")])], 1), _vm._v(" "), _c('div', {
-    staticClass: "echarts-wrap"
-  }, [_c('mpvue-echarts', {
-    ref: "echarts",
-    attrs: {
-      "lazyLoad": "",
-      "echarts": _vm.echarts,
-      "onInit": _vm.handleInit,
-      "mpcomid": '2'
-    }
-  })], 1)])
-}
-var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "detail__bo__right"
-  }, [_c('img', {
-    attrs: {
-      "src": "/static/img/wd.jpg",
-      "alt": ""
-    }
-  })])
-}]
-render._withStripped = true
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-6c1e283e", esExports)
-  }
-}
-
-/***/ }),
-
-/***/ 140:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_mpvue_loader_lib_selector_type_script_index_0_echarts_vue__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mpvue_loader_lib_template_compiler_index_id_data_v_8046877c_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_mpvue_loader_lib_selector_type_template_index_0_echarts_vue__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_mpvue_loader_lib_selector_type_script_index_0_echarts_vue__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mpvue_loader_lib_template_compiler_index_id_data_v_8046877c_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_mpvue_loader_lib_selector_type_template_index_0_echarts_vue__ = __webpack_require__(108);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(141)
+  __webpack_require__(105)
 }
-var normalizeComponent = __webpack_require__(5)
+var normalizeComponent = __webpack_require__(2)
 /* script */
 
 /* template */
@@ -344,7 +268,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "node_modules/mpvue-echarts/src/echarts.vue"
+Component.options.__file = "node_modules\\mpvue-echarts\\src\\echarts.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] echarts.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -369,20 +293,20 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 141:
+/***/ 105:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 142:
+/***/ 106:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__wx_canvas__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__wx_canvas__ = __webpack_require__(107);
 
 //
 //
@@ -543,7 +467,7 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 144:
+/***/ 108:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -576,7 +500,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 152:
+/***/ 109:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -615,7 +539,90 @@ function formatDate(now) {
   formatDate: formatDate
 });
 
+/***/ }),
+
+/***/ 110:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "container"
+  }, [_c('view', {
+    staticClass: "detail__box"
+  }, [_c('view', {
+    staticClass: "detail__bo__left"
+  }, [_c('ul', [_c('li', [_c('view', {
+    staticClass: "title"
+  }, [_vm._v("位置名称：")]), _vm._v(" "), _c('view', {
+    staticClass: "txt"
+  }, [_vm._v(_vm._s(_vm.detail.name))])]), _vm._v(" "), _c('li', [_c('view', {
+    staticClass: "title"
+  }, [_vm._v("设备 EUI：")]), _vm._v(" "), _c('view', {
+    staticClass: "txt"
+  }, [_vm._v(_vm._s(_vm.detail.devEui))])]), _vm._v(" "), _c('li', [_c('view', {
+    staticClass: "title"
+  }, [_vm._v("当前状态：")]), _vm._v(" "), _c('view', {
+    staticClass: "txt"
+  }, [_vm._v("温度:" + _vm._s(_vm._f("capitalize")(_vm.temperature)) + "°C  湿度:" + _vm._s(_vm.humidity) + "%  在线")])])], 1)], 1), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c('view', [_c('i-button', {
+    attrs: {
+      "type": _vm.query == 'temperature' ? 'primary' : '',
+      "size": "small",
+      "inline": "",
+      "eventid": '0',
+      "mpcomid": '0'
+    },
+    on: {
+      "click": function($event) {
+        _vm.query = 'temperature'
+      }
+    }
+  }, [_vm._v("温度")]), _vm._v(" "), _c('i-button', {
+    attrs: {
+      "type": _vm.query == 'humidity' ? 'primary' : '',
+      "size": "small",
+      "inline": "",
+      "eventid": '1',
+      "mpcomid": '1'
+    },
+    on: {
+      "click": function($event) {
+        _vm.query = 'humidity'
+      }
+    }
+  }, [_vm._v("湿度")])], 1), _vm._v(" "), _c('div', {
+    staticClass: "echarts-wrap"
+  }, [_c('mpvue-echarts', {
+    ref: "echarts",
+    attrs: {
+      "lazyLoad": "",
+      "echarts": _vm.echarts,
+      "onInit": _vm.handleInit,
+      "mpcomid": '2'
+    }
+  })], 1)])
+}
+var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "detail__bo__right"
+  }, [_c('img', {
+    attrs: {
+      "src": "/static/img/wd.jpg",
+      "alt": ""
+    }
+  })])
+}]
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-6c1e283e", esExports)
+  }
+}
+
 /***/ })
 
-},[125]);
+},[140]);
 //# sourceMappingURL=index.js.map

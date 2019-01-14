@@ -1,21 +1,24 @@
 import Vue from 'vue'
 import App from '@/App'
 import MpvueRouterPatch from 'mpvue-router-patch';
+import { log } from 'util';
 
 Vue.use(MpvueRouterPatch);
 
 Vue.prototype.ajax = function (url, data, method) {
   return new Promise((resolve, reject) => {
     wx.request({
-      url: `https://nhjk.uniteddata.com/${url}`,
-      //url: `http://172.16.1.117:5000/${url}`,
+     // url: `https://nhjk.uniteddata.com/${url}`,
+      url: `http://172.16.1.117:5000/${url}`,
       data: data,
-      method: method ? 'POST' : 'Get',
+      method: method ? 'POST' : 'GET',
       header: {
         'Authorization': wx.getStorageSync('Authorization'),
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       success(res) {
+        console.log(res);
+        
         resolve(res.data);
       },
       fail(err) {

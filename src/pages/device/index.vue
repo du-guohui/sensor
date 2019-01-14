@@ -92,6 +92,8 @@ export default {
       }
     },
     GetData() {
+      console.log(this.$route.query);
+      
       this.form.name = "";
       if (this.$route.query.devEui) {
         this.form.devEui = this.$route.query.devEui;

@@ -13,7 +13,6 @@ export default {
                 key: "Authorization",
                 data: res.content
               });
-              // console.log(res.content);
             });
           } else {
             console.log("登录失败！" + res.errMsg);
@@ -23,7 +22,7 @@ export default {
     }
   },
   created() {
-    this.Login();
+    //this.Login();
   }
 };
 </script>
